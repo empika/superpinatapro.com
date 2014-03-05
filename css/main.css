@@ -11,15 +11,41 @@ html {
 	font-size: 40px;
 }
 
+body {
+    margin: 1em;
+}
+
 h1 { 
 	color: magenta;
 }
 
 canvas {
-    width: 1024px;
+    width: 1280px;
     height: 768px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1000;
+}
+
+#featured-at {
+    color: yellow;
+    font-size: 0.7em;
+    width: 15em;
+    -webkit-transform: rotate(-15deg);
+    -webkit-transform-origin: 50% 50%;
+
+    -o-transform: rotate(-15deg); 
+    -o-transform-origin:50% 50%;
+
+    transform: rotate(-15deg);
+    transform-origin: 50% 50%;
+}
+
+#credit {
+    font-size: 0.7em;
+    text-align: right;
+    position: fixed;
+    bottom: 0px;
+    right: 0.7em;
 }
