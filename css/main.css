@@ -1,37 +1,56 @@
 @font-face {
     font-family: "04B_03";
-    src: url(/img/04B_03.ttf) format("truetype");
+    src: url(/04B_03.ttf) format("truetype");
 }
 
 html {
 	background-color: black;
 	color: OrangeRed;
 	margin: 30px;
-	font-family: '04B_03', cursive;
+	font-family: '04B_03', Helvetica, Arial, sans-serif;
 	font-size: 40px;
 }
 
 body {
     margin: 1em;
+    width: 1024px;
+    margin: 0 auto;
 }
 
-h1 { 
+h1, a { 
 	color: magenta;
 }
 
 canvas {
     width: 1280px;
     height: 768px;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: -1000;
 }
 
-#featured-at {
+.clear {
+    clear: both;
+}
+
+.list-div {
     color: yellow;
     font-size: 0.7em;
     width: 15em;
+    float: left;
+}
+
+#bullets {
+    margin-left: 2em;
+}
+
+#bullets h3, #bullets ul {
+    margin-bottom: 0.4em;
+    margin-top: 0.4em;
+}
+
+#seen-at {
     -webkit-transform: rotate(-15deg);
     -webkit-transform-origin: 50% 50%;
 
@@ -42,10 +61,105 @@ canvas {
     transform-origin: 50% 50%;
 }
 
+#features {
+    -webkit-transform: rotate(15deg);
+    -webkit-transform-origin: 50% 50%;
+
+    -o-transform: rotate(15deg); 
+    -o-transform-origin:50% 50%;
+
+    transform: rotate(15deg);
+    transform-origin: 50% 50%;
+    margin-top: 1em;
+}
+
+#download {
+    margin: 2em auto;
+    text-align: center;
+    color: magenta;
+}
+
+#download h3 a {
+    color: magenta;
+}
+
+#pictures {
+    margin: 0 auto;
+}
+
+#pictures ul {
+    padding: 0;
+}
+
+#pictures li {
+    list-style: none;
+    display: inline-block;
+    width: 230px;
+}
+
+#faq {
+    margin: 0 auto;
+    
+    width: 512px;
+}
+
+#faq h3 {
+    text-align: center;
+}
+
+dl {
+    font-size: 0.5em;
+}
+
+dt {
+    margin-bottom: 0.5em;
+}
+
+dd {
+    color: yellow;
+    margin-left: 0;
+    margin-bottom: 2em;
+}
+
+dt:before {
+    content: "Q.";
+    margin-right: 6px;
+}
+dd:before {
+    content: "A.";
+    margin-right: 6px;
+}
+
 #credit {
     font-size: 0.7em;
     text-align: right;
-    position: fixed;
+    color: MediumSeaGreen;
+/*    position: fixed;
     bottom: 0px;
-    right: 0.7em;
+    right: 1.5em;*/
+}
+
+#credit a {
+    color: magenta;
+}
+
+
+blink {
+  -webkit-animation: blink 1s steps(5, start) infinite;
+  -moz-animation:    blink 1s steps(5, start) infinite;
+  -o-animation:      blink 1s steps(5, start) infinite; 
+  animation:         blink 1s steps(5, start) infinite;
+}
+
+@-webkit-keyframes blink {
+  to { visibility: hidden; }
+}
+@-moz-keyframes blink {
+  to { visibility: hidden; }
+}
+@-o-keyframes blink {
+  to { visibility: hidden; }
+}
+@keyframes blink {
+  to { visibility: hidden; }
 }

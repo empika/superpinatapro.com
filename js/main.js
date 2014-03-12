@@ -1,6 +1,22 @@
-(function() {
-    
-    var canvas = document.getElementById('pinatacanvas');
+$(document).ready(function() {
+
+    $(".fancybox").attr('rel', 'gallery').fancybox({
+        openEffect: 'none',
+        closeEffect: 'none',
+        autoSize: true,
+        autoCenter: true,
+        autoResize: true,
+        arrows: true,
+        showArrows  : true,
+        beforeLoad: function () {
+            $('#pinatacanvas').css('z-index', 0);
+        },
+        afterClose: function () {
+            $('#pinatacanvas').css('z-index', -1000);
+        }
+    });
+
+        var canvas = document.getElementById('pinatacanvas');
     
     var world = boxbox.createWorld(canvas, {gravity: {x: 0, y: 9.8}, scale: 100, collisionOutlines: false});
     
@@ -10,7 +26,7 @@
     var linkTemplate = {
         width: .2,
         height: 0.5,
-        image: "/img/rope_1.png",
+        image: "/img/pinata/rope_1.png",
         imageStretchToFit: true
     };
     
@@ -36,7 +52,7 @@
     thisEntity = world.createEntity({
         x: x,
         y: y, // - 0.2,
-        image: "/img/pinata_idle_huge.png",
+        image: "/img/pinata/pinata_idle_huge.png",
         imageOffsetX: -1,
         imageOffsetY: -1,
         density: 5,
@@ -68,6 +84,4 @@
     window.peck = function() {
         thisEntity.applyImpulse(15, 1);
     }
-     
-})();
-
+});
